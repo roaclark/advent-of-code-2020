@@ -2,7 +2,7 @@ def read_input_file(filename):
     lines = None
     with open(filename) as f:
       lines = f.readlines()
-    return lines
+    return [l.strip() for l in lines]
 
 class Solver:
   def __init__(self, parser, solver):
