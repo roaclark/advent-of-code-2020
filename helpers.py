@@ -4,6 +4,9 @@ def read_input_file(filename):
       lines = f.readlines()
     return [l.strip() for l in lines]
 
+def assert_equals(expected, ans):
+  assert expected == ans, 'Expected {0} but got {1}'.format(expected, ans)
+
 class Solver:
   def __init__(self, parser, solver):
     self.parser = parser
@@ -23,4 +26,4 @@ class Solver:
 
   def test_solution(self, lines=None, data=None, expected=None):
     ans = self.solve(lines=lines, data=data)
-    assert expected == ans, 'Expected {0} but got {1}'.format(expected, ans)
+    assert_equals(expected, ans)
